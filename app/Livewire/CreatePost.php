@@ -7,6 +7,8 @@ use App\Models\Post;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Illuminate\Support\Str;
+use Livewire\Attributes\Layout;
+use Livewire\Attributes\Title;
 
 class CreatePost extends Component
 {
@@ -38,8 +40,9 @@ class CreatePost extends Component
 		$this->validateOnly('form.title');
 	}
 
+	// #[Title('Create Post')] 
 	public function render()
 	{
-		return view('livewire.create-post');
+		return view('livewire.create-post')->title('Create Post');
 	}
 }
