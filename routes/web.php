@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Livewire\CreatePost;
@@ -44,3 +45,5 @@ Route::view('posts/{post}/edit', 'posts.edit');
 Route::get('/post/{post}', ViewPost::class);
 
 Route::get('todos', TodosList::class);
+
+Route::get('/products', [ProductController::class, 'index']);
