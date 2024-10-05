@@ -1,9 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use App\Livewire\CreatePost;
+use App\Livewire\ShowPost;
+use App\Livewire\ShowPosts;
+use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +37,6 @@ require __DIR__ . '/auth.php';
 Route::get('/posts/create', CreatePost::class);
 
 Route::view('posts/{post}/edit', 'posts.edit');
+
+Route::get('/posts/{post}', ShowPost::class);
+Route::get('/posts', ShowPosts::class);
