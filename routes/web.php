@@ -5,7 +5,9 @@ use App\Http\Controllers\UserController;
 use App\Livewire\CreatePost;
 use App\Livewire\ShowPost;
 use App\Livewire\ShowPosts;
+use App\Livewire\ViewPost;
 use Illuminate\Support\Facades\Route;
+
 
 
 /*
@@ -38,5 +40,5 @@ Route::get('/posts/create', CreatePost::class);
 
 Route::view('posts/{post}/edit', 'posts.edit');
 
-Route::get('/posts/{post}', ShowPost::class);
-Route::get('/posts', ShowPosts::class);
+Route::get('/post/{post}', ViewPost::class);
+
