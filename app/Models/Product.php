@@ -10,7 +10,13 @@ class Product extends Model
 {
 	use HasFactory;
 
-	protected $fillable = ['name', 'description', 'category_id'];
+	protected $fillable = ['name', 'description', 'category_id', 'color', 'in_stock'];
+
+	const COLOR_LIST = [ 
+		'red' => 'Red',
+		'green' => 'Green',
+		'blue' => 'Blue',
+];
 
 	public function category()
 	{

@@ -19,7 +19,7 @@ class ProductsEdit extends Component
 
 	public function mount(Product $product)
 	{
-		$this->from->setProduct($product);
+		$this->form->setProduct($product);
 		$this->categories = collect(Category::pluck('name', 'id'));
 	}
 
