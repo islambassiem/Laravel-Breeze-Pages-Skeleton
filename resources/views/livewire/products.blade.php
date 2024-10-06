@@ -2,14 +2,15 @@
     <div class="space-x-8">
         <input type="search" wire:model.live="searchQuery" id="search" placeholder="Search...">
 
-        <select name="category">
-            <option value="0">-- CHOOSE CATEGORY --</option>
+        <select name="category" wire:model.live="searchCategory">
+            <option value="0" >-- CHOOSE CATEGORY --</option>
             @foreach ($categories as $id => $category)
                 <option value="{{ $id }}">{{ $category }}</option>
             @endforeach
         </select>
     </div>
-    <div class="min-w-full align-middle">
+		<div class="text-red-600" wire:loading>Loading...</div>
+    <div class="min-w-full align-middle" wire:loading.class="opacity-50">
         <table class="min-w-full divide-y divide-gray-200 border">
             <thead>
                 <tr>
