@@ -6,28 +6,31 @@ use App\Livewire\Forms\ProductsForm;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Collection;
+use Livewire\Attributes\Locked;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
-class ProductsCreate extends Component
+class ProductsEdit extends Component
 {
+
 	public ProductsForm $form;
 
 	public Collection $categories;
 
-	public function mount(): void
+	public function mount(Product $product)
 	{
-		$this->categories = Category::pluck('name', 'id');
+		$this->from->setProduct($product);
+		$this->categories = collect(Category::pluck('name', 'id'));
 	}
 
-	public function save(): void
+	public function save()
 	{
-		$this->form->save();
+		$this->form->update();
 		$this->redirect('/products');
 	}
 
 	public function render()
 	{
-		return view('livewire.products-create');
+		return view('livewire.products-edit');
 	}
 }

@@ -5,11 +5,13 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Livewire\CreatePost;
 use App\Livewire\ProductsCreate;
+use App\Livewire\ProductsEdit;
 use App\Livewire\ShowPost;
 use App\Livewire\ShowPosts;
 use App\Livewire\TodosList;
 use App\Livewire\ViewPost;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -51,3 +53,5 @@ Route::get('todos', TodosList::class);
 Route::get('/products', [ProductController::class, 'index']);
 
 Route::get('/products/create', ProductsCreate::class)->name('products.create');
+
+Route::get('/product/{product}/edit', ProductsEdit::class)->name('products.edit');
