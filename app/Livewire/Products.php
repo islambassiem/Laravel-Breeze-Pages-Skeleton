@@ -32,6 +32,11 @@ class Products extends Component
 		}
 	}
 
+	public function deleteProduct(int $productId)
+	{
+		Product::find($productId)->delete();
+	}
+
 	public function render()
 	{
 		sleep(1);
