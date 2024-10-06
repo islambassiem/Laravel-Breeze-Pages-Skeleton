@@ -8,6 +8,13 @@
                 <option value="{{ $id }}">{{ $category }}</option>
             @endforeach
         </select>
+
+        <a wire:navigate href="{{ route('products.create') }}"
+            class="inline-flex items-center px-4 py-2 bg-gray-800 rounded-md font-semibold text-xs text-white uppercase tracking-widest">
+            Add new product
+        </a>
+
+				
     </div>
     <div class="text-red-600" wire:loading>Loading...</div>
     <div class="min-w-full align-middle" wire:loading.class="opacity-50">
@@ -47,8 +54,7 @@
                                 class="inline-flex items-center px-4 py-2 bg-gray-800 rounded-md font-semibold text-xs text-white uppercase tracking-widest">
                                 Edit
                             </a>
-                            <a href="#" wire:click="deleteProduct({{ $product->id }})"
-                                {{-- onclick="return confirm('Are you sure?') || event.stopImmediatePropagation()" --}}
+                            <a href="#" wire:click="deleteProduct({{ $product->id }})" {{-- onclick="return confirm('Are you sure?') || event.stopImmediatePropagation()" --}}
                                 wire:confirm="Are you sure you want to delete this post?"
                                 class="inline-flex items-center px-4 py-2 bg-red-600 rounded-md font-semibold text-xs text-white uppercase tracking-widest">
                                 Delete
